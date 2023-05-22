@@ -8,6 +8,9 @@ export default function DayInfo() {
         <div className='relative w-1/2 aspect-square flex justify-center mx-auto'>
             <Image className='' src={"/images/LightRain.png"} fill={true}></Image>
         </div>
+        <div>
+          <p>16°C <span>11°C</span></p>
+        </div>
     </div>
   )
 }
