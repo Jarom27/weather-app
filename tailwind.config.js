@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors:{
         'bg-indigo-principal' : "rgb(30, 33, 58)",
-        'gray-controls' : "#6e707a"
+        'gray-controls' : "#6e707a",
+        'indigo-temp' : "#585676"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
