@@ -7,8 +7,6 @@ export default function DailyWeather() {
         <DayInfo></DayInfo>
         <DayInfo></DayInfo>
         <DayInfo></DayInfo>
-        <DayInfo></DayInfo>
-        <DayInfo></DayInfo>
     </div>
   )
 }
