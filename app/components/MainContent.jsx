@@ -4,7 +4,8 @@ import HighLights from './HighLights'
 
 export default function MainContent() {
   return (
-    <main className='flex flex-col gap-4 mt-4'>
+    <main className='flex flex-col lg:w-2/3 gap-4 mt-4'>
+        {/* <TempControls></TempControls> */}
         <DailyWeather></DailyWeather>
         <HighLights></HighLights>
     </main>

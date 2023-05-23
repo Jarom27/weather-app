@@ -19,7 +19,7 @@ export default async function PreviewInfo() {
             </div>
             <div className="mt-8 text-white text-center leading-10">
                 <p>Today  <span className="text-sm">&#9679;</span> <span>{current_time.getFormat()}</span></p>
-                <p className="flex justify-center align-middle gap-1"><span className="flex align-middle"><Image src="/location_pin.svg" width={15} height={15} alt="Location pin"></Image></span>Helsinki</p>
+                <p className="flex justify-center align-middle gap-1"><span className="flex align-middle"><Image src="/location_pin.svg" width={15} height={15} alt="Location pin"></Image></span>{current_weather.location.name}</p>
             </div>
             </Suspense>
         </div>
