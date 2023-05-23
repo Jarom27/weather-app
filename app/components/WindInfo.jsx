@@ -11,7 +11,7 @@ export default async function WindInfo() {
             <h3>Wind status</h3>
             <Suspense fallback={<div>Cargando...</div>}>
                 <h1 className={"text-5xl font-bold text-white " + font.className}>{current_time.current.wind_mph} <span className="text-2xl font-extralight">mph</span></h1>
-                <p>{current_time.current.wind_dir}</p>
+                <p className="font-bold text-xl">{current_time.current.wind_dir}</p>
             </Suspense> 
         </div>
     )
