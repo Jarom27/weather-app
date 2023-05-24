@@ -5,7 +5,7 @@ import TempControls from './TempControls'
 
 export default function MainContent({city}) {
   return (
-    <main className='flex flex-col lg:w-2/3 gap-4 mt-4'>
+    <main className='flex flex-col lg:w-2/3 lg:ps-10 gap-4 mt-4 mx-auto'>
         <TempControls></TempControls>
         <DailyWeather city={city}></DailyWeather>
         <HighLights city={city}></HighLights>

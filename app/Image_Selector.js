@@ -45,6 +45,12 @@ export function getImageByWeatherKind(weather){
         case "Patchy rain possible":
             image = "light_rain"
             break;
+        case "Moderate or heavy rain with thunder":
+            image = "heavy_rain"
+            break;
+        case "Overcast":
+            image = "heavy_cloud"
+            break;
     }
     return `/images/${image}.png`
 }
