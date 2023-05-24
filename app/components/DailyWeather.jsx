@@ -2,8 +2,8 @@ import React from 'react'
 import DayInfo from './DayInfo'
 import { getCurrent, getFutureForecast } from '../Data'
 
-export default async function DailyWeather() {
-    const future_time = await getFutureForecast()
+export default async function DailyWeather({city}) {
+    const future_time = await getFutureForecast(city)
     return (
       <div className='grid grid-cols-2 grid-rows-2 lg:flex lg:flex-row lg:justify-start mx-auto mt-10 gap-3'>
           {future_time.forecast.forecastday.map((day,index) => <DayInfo key={index} day={day}></DayInfo>)}

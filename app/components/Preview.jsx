@@ -5,8 +5,8 @@ import PreviewControls from './PreviewControls'
 import { getImageByWeatherKind } from '../Image_Selector'
 import { getCurrent } from '../Data'
 
-export default async function Preview() {
-  let current_weather = await getCurrent()
+export default async function Preview({city}) {
+  let current_weather = await getCurrent(city)
   return (
     <header id='preview' className='w-screen lg:w-1/4 h-[75vh] lg:h-screen bg-bg-indigo-principal'>
         <PreviewControls></PreviewControls>
@@ -14,7 +14,7 @@ export default async function Preview() {
             <Image className='opacity-100 absolute top-4 left-24 ' src={getImageByWeatherKind(current_weather.current.condition.text)} width={120} height={120} alt='Image according to weather'></Image>
             <Image className='object-cover opacity-20' src="/images/cloud-background.png" fill={true} alt='Cloud background'></Image>
         </div>
-        <PreviewInfo></PreviewInfo>
+        <PreviewInfo city={city}></PreviewInfo>
     </header>
   )
 }

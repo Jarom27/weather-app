@@ -3,8 +3,8 @@ import { getCurrent } from "../Data"
 import { Suspense } from "react";
 const font = Raleway({subsets:["latin"]})
 
-export default async function WindInfo() {
-    const current_time = await getCurrent();
+export default async function WindInfo({city}) {
+    const current_time = await getCurrent(city);
 
     return (
         <div className="mx-auto text-center py-4 bg-bg-indigo-principal w-full max-w-xs ">

@@ -9,7 +9,10 @@ export default function CurrentLocationButton() {
         console.log(position.coords.longitude);
     }
     function handleClick(e){
-      navigator.geolocation.getCurrentPosition(success)
+      console.log(e)
+      if(position != undefined){
+        console.log("diferente")
+      }
     }
     
     return (

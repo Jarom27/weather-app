@@ -6,9 +6,9 @@ import SideBar from './components/SideBar'
 export default function Home() {
   return (
     <div className='flex flex-col lg:flex-row w-screen'>
-      <Preview></Preview>
+      <Preview city={"Helsinki"}></Preview>
       <SideBar></SideBar>
-      <MainContent></MainContent>
+      <MainContent city={"Helsinki"}></MainContent>
     </div>
   )
 }

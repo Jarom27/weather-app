@@ -11,9 +11,9 @@ export function setCity(city_name){
         features.city = city_name;
     }
 }
-export async function getCurrent(){
+export async function getCurrent(city){
     const API_KEY = process.env.API_KEY
-    const  url  = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${features.city}`
+    const  url  = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`
 
     try{
         const response = await fetch(url,{next:{revalidate: 60}})
@@ -25,9 +25,9 @@ export async function getCurrent(){
         console.log("No se localizo la informacion")
     }
 }
-export async function getFutureForecast(){
+export async function getFutureForecast(city){
     const API_KEY = process.env.API_KEY;
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${features.city}&days=3&aqi=no&alerts=no`
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=3&aqi=no&alerts=no`
     const response = await fetch(url,{next:{
         revalidate: 60
     }})

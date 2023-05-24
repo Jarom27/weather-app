@@ -7,8 +7,8 @@ import { getCurrent } from "../Data"
 const font_for_numbers = Raleway({subsets:["latin"]})
 const font_for_degrees = Lato({subsets:["latin"],weight:"300"})
 
-export default async function PreviewInfo() {
-    const current_weather = await getCurrent();
+export default async function PreviewInfo({city}) {
+    const current_weather = await getCurrent(city);
     const current_time = new DateFormat(current_weather.location.localtime)
     return (
         <div className="flex flex-col w-full">

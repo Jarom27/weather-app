@@ -3,14 +3,13 @@ import React from 'react'
 import { setCity } from '../Data'
 
 export default function SearchCity() {
-    let location = ""
+    let city = ""
     function handleType(e){
         console.log(e.target.value)
-        location = e.target.value
+        city = e.target.value
     }
     function handleClick(e){
-        console.log(location)
-        setCity(location)
+        window.location.replace(`/${city}`)
     }
     return (
         <div className='flex ps-2 gap-1'>
