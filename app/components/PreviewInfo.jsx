@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Suspense } from "react"
 import { DateFormat } from "../date_format"
 import { getCurrent } from "../Data"
+import PreviewDegree from "./PreviewDegree"
 
 const font_for_numbers = Raleway({subsets:["latin"]})
 const font_for_degrees = Lato({subsets:["latin"],weight:"300"})
@@ -14,7 +15,7 @@ export default async function PreviewInfo({city}) {
         <div className="flex flex-col w-full">
             <Suspense fallback={<div>Cargando...</div>}>
             <div className="text-center text-9xl">
-                <h1 className={font_for_numbers.className}>{current_weather.current.temp_c}<span className={font_for_degrees.className + " text-4xl"}>°C</span></h1>
+                <PreviewDegree temp_c={current_weather.current.temp_c} temp_f={current_weather.current.temp_f}></PreviewDegree>
                 <h2 className={"mt-7 text-3xl "+font_for_numbers.className}>{current_weather.current.condition.text}</h2>
             </div>
             <div className="mt-8 text-white text-center leading-10">

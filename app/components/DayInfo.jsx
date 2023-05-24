@@ -3,6 +3,8 @@ import Image from 'next/image'
 import React from 'react'
 import { getImageByWeatherKind } from '../Image_Selector'
 import { DateFormat } from '../date_format'
+import Maxtemp from './Maxtemp'
+import MinTemp from './MinTemp'
 
 const font_principal = Raleway({subsets: ["latin"]})
 
@@ -17,7 +19,7 @@ export default function DayInfo({day,name_day}) {
               <Image className='' src={getImageByWeatherKind(day.day.condition.text)} fill={true} alt='Image according the kind of weather'></Image>
           </div>
           <div className={`pt-2 ${font_principal.className}`}>
-            <p>{`${day.day.maxtemp_c} °C`} <span>{`${day.day.mintemp_c} °C`}</span></p>
+            <p><Maxtemp temp_c={day.day.maxtemp_c} temp_f={day.day.maxtemp_f}></Maxtemp> <MinTemp temp_c={day.day.mintemp_c} temp_f={day.day.mintemp_f}></MinTemp></p>
           </div>
       </div>
     )
