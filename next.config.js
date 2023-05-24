@@ -4,9 +4,9 @@ const nextConfig = {
         appDir: true,
     },
     images:{
-        dangerouslyAllowSVG : true
+        dangerouslyAllowSVG : true,
+        unoptimized: true
     },
-    output:"export"
 }
 
 module.exports = nextConfig
