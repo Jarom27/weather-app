@@ -1,18 +1,29 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function CurrentLocationButton() {
+    const [location,setLocation] = useState(null)
+    const options = {
+      enableHighAccuracy : true,
+      timeout : 5000
+    }
+
+    useEffect(()=>{
+      console.log(location);
+      if(location != null){
+        window.location.replace(`/${location.coords.latitude},${location.coords.longitude}`)
+      }
+    },[location])
+
     function success(position){
-        console.log(position.coords)
-        console.log(position.coords.latitude);
-        console.log(position.coords.longitude);
+      setLocation(position)
+    }
+    function error(error){
+        console.log("Hubo un error");
     }
     function handleClick(e){
-      console.log(e)
-      if(position != undefined){
-        console.log("diferente")
-      }
+      navigator.geolocation.getCurrentPosition(success,error,options)
     }
     
     return (
