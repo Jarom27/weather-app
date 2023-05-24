@@ -23,7 +23,8 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-
+env:
+  API_KEY : 0bad43a6462a4c9fbc6111102232203
 jobs:
   # Build job
   build:
